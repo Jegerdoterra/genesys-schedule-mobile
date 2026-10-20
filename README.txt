@@ -1,9 +1,19 @@
-Genesys Schedule Helper Mobile Web v0.1.1 TEST
+Genesys Schedule Helper — Mobile Web v0.1.2 TEST
 
-FIXED: Test full alarm now triggers visible alarm and audible repeating sound until dismissed. Scheduled and manual break alerts use the same browser audio mechanism.
+FIX: Test full alarm previously called unlockAudio() from another script's private scope,
+raising ReferenceError and stopping the button handler. It now invokes the exported alarm
+engine directly from the click. Scheduled alerts use the same alarm engine.
 
-Upload all files to the ROOT of your existing GitHub repository, replacing index.html and sw.js. On your phone, close and reopen the app; refresh the website if needed. Test while the app is open, phone media volume on, and silent mode off.
+Settings: kept timing, sound, volume, Test full alarm, and Local data / Clear schedule.
+Removed the extra version text below settings. Added author credit to dashboard.
 
-LIMITATION: Web browsers cannot guarantee audio or notifications while phone is locked or app is backgrounded.
+UPDATE GITHUB PAGES:
+Extract and upload all files to repository root, replacing existing files.
+Commit changes, wait for Pages to publish, then refresh the phone browser.
+If installed as a home-screen app, close it fully and reopen after updating.
 
-No server-side schedule upload; imported schedules are stored locally.
+Test: open Settings, select Digital alarm, volume > 0, tap Test full alarm.
+The visible alert should open and sound repeat until dismissed.
+
+Mobile browsers cannot guarantee sound while locked or backgrounded.
+QR camera still depends on BarcodeDetector support.
