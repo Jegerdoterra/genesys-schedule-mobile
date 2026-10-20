@@ -1,0 +1,551 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0c111b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="manifest.webmanifest"><title>Genesys Schedule Helper</title><link rel="icon" href="data:image/png;base64,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"><style>
+* { box-sizing: border-box; }
+
+:root {
+  color-scheme: dark;
+  --bg: #0c111b;
+  --panel: #131c2a;
+  --line: #263449;
+  --text: #e8eef8;
+  --muted: #9aaac0;
+  --blue: #48a8ff;
+  --green: #49d7a1;
+  --amber: #ffbf57;
+}
+
+body {
+  margin: 0;
+  width: 380px;
+  max-height: 780px;
+  overflow-y: auto;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.45 "Segoe UI", Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  background: #101826;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  color: #7cc4ff;
+  background: #1a3047;
+  font-size: 26px;
+}
+
+.brand { flex: 1; }
+h1 { margin: 0; font-size: 15px; font-weight: 700; }
+.brand p { margin: 2px 0 0; color: var(--muted); font-size: 11px; }
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #6b7789;
+}
+
+.status-dot.connected {
+  background: var(--green);
+  box-shadow: 0 0 10px #49d7a166;
+}
+
+main { padding: 13px; }
+
+.hero {
+  padding: 14px;
+  border: 1px solid #245b57;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #102b2c, #10202b);
+  margin-bottom: 11px;
+}
+
+.eyebrow {
+  color: #73d9c0;
+  letter-spacing: .1em;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.next-title { margin-top: 5px; font-size: 19px; font-weight: 700; }
+.next-meta { color: #b7c7d9; margin-top: 2px; font-size: 12px; }
+
+button, select { font: inherit; }
+button { cursor: pointer; }
+
+.primary, .secondary {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-weight: 700;
+}
+
+.primary {
+  border: 0;
+  background: var(--blue);
+  color: #071522;
+}
+
+.primary:hover { background: #71bbff; }
+
+.secondary {
+  margin-top: 7px;
+  border: 1px solid #34445a;
+  background: #172438;
+  color: #c6e5ff;
+}
+
+.secondary:hover { background: #20334b; }
+
+.hint { margin: 7px 2px 12px; color: var(--muted); font-size: 11px; }
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: var(--panel);
+}
+
+.section-title { font-size: 12px; font-weight: 700; margin-bottom: 9px; }
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 0;
+  color: #dce5f2;
+  cursor: pointer;
+}
+
+.check input {
+  accent-color: var(--blue);
+  width: 15px;
+  height: 15px;
+  margin: 0;
+}
+
+.field-label, .volume-row { color: var(--muted); font-size: 11px; }
+.sound-row { display: flex; gap: 7px; margin-top: 5px; }
+
+select {
+  flex: 1;
+  min-width: 0;
+  background: #0c1421;
+  color: var(--text);
+  border: 1px solid #34445a;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.test {
+  width: 37px;
+  border: 1px solid #34445a;
+  background: #0c1421;
+  color: #bfe2ff;
+  border-radius: 8px;
+}
+
+.volume-row { display: flex; justify-content: space-between; margin-top: 12px; }
+#volume { width: 100%; accent-color: var(--blue); margin: 7px 0 3px; }
+.compact { margin-top: 4px; font-size: 12px; }
+
+.schedule-panel { padding-bottom: 7px; }
+.schedule-list { max-height: 340px; overflow-y: auto; }
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 2px;
+  border-bottom: 1px solid #202d3f;
+}
+
+.schedule-item:last-child { border-bottom: 0; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+.dot.break { background: var(--amber); }
+.dot.meal { background: var(--blue); }
+.dot.off { background: #91a5c4; }
+.activity { min-width: 0; }
+
+.activity-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.duration { color: var(--muted); font-size: 10px; margin-left: 4px; }
+.time { font-size: 11px; color: #c7d4e5; white-space: nowrap; }
+.empty { padding: 12px 2px; color: var(--muted); font-size: 11px; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 10px;
+  padding: 2px 2px 4px;
+}
+
+.text-button { background: none; color: #8bcaff; border: 0; padding: 4px; }
+
+#endBreakBtn:not([hidden]) { color: #ffcf8a; border-color: #a56b34; }
+#missedBreakBtn { border-color: #886b35; }
+
+.reconnect { padding: 7px 10px; font-size: 11px; font-weight: 500; }
+.sync-status { display: flex; align-items: center; gap: 11px; padding: 12px; margin: 11px 0;
+  border: 1px solid #574630; border-radius: 10px; background: #251f19; }
+.sync-status.connected { border-color: #245b57; background: #112923; }
+.sync-icon { font-size: 22px; font-weight: 700; color: #ffbf57; }
+.sync-status.connected .sync-icon { color: #49d7a1; }
+.sync-detail { margin-top: 3px; color: var(--muted); font-size: 11px; }
+.alarm-test { margin: 9px 0 5px; }
+
+.brand-icon { overflow: hidden; }
+.brand-logo { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+.sync-status > div { flex: 1; min-width: 0; }
+.sync-refresh { width: 34px; height: 34px; border: 1px solid #456079; border-radius: 8px; background: #1a3045; color: #bfe5ff; font-size: 25px; line-height: 1; cursor: pointer; }
+.sync-refresh:hover { background: #24465f; }
+
+/* Compact diagnostics and footer attribution */
+#diagnosticsPanel { padding: 9px 11px; margin-top: 8px; }
+#diagnosticsPanel .section-title { font-size: 11px; margin-bottom: 5px; }
+.diagnostics-readonly { font-size: 10px; color: #a9d9c6; line-height: 1.35; margin-bottom: 6px; }
+.diagnostics-lines { white-space: pre-line; font-size: 10px; line-height: 1.5; color: var(--muted); overflow-wrap: anywhere; }
+#copyDiagnostics { font-size: 10px; padding: 5px 9px; margin-top: 7px; }
+footer { flex-wrap: wrap; row-gap: 4px; }
+.footer-credit { flex-basis: 100%; display: block; text-align: center; font-size: 9px; color: var(--muted); opacity: .8; }
+
+.changelog-link { display:block; flex-basis:100%; margin:2px auto 0; padding:3px 6px; background:transparent; border:0; color:var(--muted); font-size:10px; text-decoration:underline; cursor:pointer; }
+.changelog-link:hover { color:#d7e7ff; }
+
+.audio-output-help {font-size:11px;color:var(--muted);margin:5px 0 10px;line-height:1.45}
+#audioOutput {min-width:0;flex:1}
+
+body{width:auto;max-height:none;min-height:100vh}header{padding:17px max(18px,calc((100vw - 990px)/2))}main{max-width:990px;margin:auto;padding:18px}.layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(310px,.85fr);gap:16px}.left,.right{min-width:0}.hero{margin-bottom:12px}.hero .next-title{font-size:23px}.countdown{font-size:35px;font-weight:750;font-variant-numeric:tabular-nums}.eyebrow{font-size:10px;color:#73d9c0;font-weight:700;letter-spacing:.1em}.small{color:var(--muted);font-size:11px}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{min-width:0}.row button{width:auto}.call{width:100%;padding:12px;border-radius:9px;border:1px solid #44705e;background:#17372f;color:#a5f5d5;font-weight:700}.call.active{border-color:#e4a64b;background:#352719;color:#ffd38a}.panel textarea{width:100%;min-height:155px;resize:vertical;background:#0c1421;border:1px solid #34445a;color:#e8eef8;border-radius:8px;padding:10px;font:12px/1.5 Consolas,monospace}.schedule-item{display:grid;grid-template-columns:8px minmax(0,1fr) auto;gap:6px;align-items:center;padding:5px 3px;border-bottom:1px solid #202d3f}.schedule-item.current-row{background:#17372f;border-radius:7px}.schedule-item.past{opacity:.5}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}.dot.break{background:var(--amber)}.dot.meal{background:var(--blue)}.dot.off{background:#91a5c4}.activity-name{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.duration{font-size:10px;color:var(--muted);white-space:nowrap}.time{white-space:nowrap;color:#c7d4e5;font-size:11px;justify-self:end}.schedule-list{max-height:390px;overflow:auto}.schedule-item .activity-info{display:flex;align-items:baseline;gap:6px;min-width:0;white-space:nowrap}.progress{height:8px;background:#28394c;border-radius:9px;overflow:hidden;margin:11px 0}.progress>div{height:100%;background:#49d7a1;width:0;transition:width .3s}.alertbox{border:1px solid #d59a46;background:#322819;border-radius:11px;padding:13px;margin-bottom:12px}.alertbox strong{color:#ffd38a}.alertbox[hidden]{display:none!important}.inline-check{display:inline-flex;gap:6px;align-items:center;color:#dce5f2;font-size:12px}.inline-check input{accent-color:var(--blue)}.compact-note{font-size:11px;color:var(--muted);margin:6px 0}.subheading{color:#b9d6ee;font-weight:700;font-size:12px;margin:8px 0}.muted-button{background:#172438;border:1px solid #34445a;color:#c6e5ff;border-radius:8px;padding:8px 10px;cursor:pointer}.muted-button:hover{background:#20334b}.muted-button:disabled{opacity:.45;cursor:not-allowed}.status-pill{font-size:11px;color:#92efc7;border:1px solid #276c54;border-radius:99px;padding:4px 9px}.panel summary{cursor:pointer;font-weight:700;font-size:12px}.panel details>summary{margin-bottom:10px}.field-label{display:block;margin-top:9px}.warning{color:#ffd38a}.sync-status{margin-bottom:12px}.offline-badge{background:#18352d;border:1px solid #2c6954;color:#9de7c9;padding:5px 9px;border-radius:99px;font-size:11px}footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:11px;padding:8px 2px}.switch-row{display:flex;justify-content:space-between;align-items:center;gap:8px}.sound-row select{flex:1}.empty{color:var(--muted);font-size:12px;padding:12px 0}.hidden{display:none!important}@media(max-width:760px){.layout{grid-template-columns:1fr}header{padding:14px 18px}main{padding:13px}.hero .next-title{font-size:20px}}
+
+/* Added reliability and usability enhancements */
+.countdown.urgent,.timer.urgent{color:#ff7474}.countdown.soon,.timer.soon{color:#ffbf57}
+.countdown{transition:color .2s}.validation{white-space:pre-line;font-size:11px;line-height:1.55;margin-top:8px}.validation.warn{color:#ffd38a}.validation.ok{color:#92efc7}
+.tracking{font-size:12px;color:#c5d8ed;line-height:1.6;margin-top:8px}.audio-ready{font-size:11px;margin-top:7px;color:#ffd38a}
+
+.app-footer{text-align:center;display:block;color:#8193aa;font-size:10px;line-height:1.8;padding:12px 8px 24px;border-top:1px solid #263449;margin-top:12px}.call[hidden]{display:none!important}#importDetails[hidden]{display:none!important}#resetSchedule{margin-top:10px}button{touch-action:manipulation}
+/* v0.2.3 dashboard refinements */
+header .header-settings{margin-left:auto;flex:0 0 auto;width:42px;height:42px;border:1px solid #3b6173;border-radius:12px;background:#163343;color:#a8e9d8;font-size:26px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+header .header-settings:active{background:#245368}
+.schedule-collapse summary.schedule-heading{display:flex;align-items:center;gap:10px;list-style:none;cursor:pointer;user-select:none;min-height:28px}
+.schedule-collapse summary.schedule-heading::-webkit-details-marker{display:none}
+.schedule-collapse .schedule-heading .section-title{margin:0;flex:1}
+.schedule-chevron{font-size:20px;color:#8bd7c6;transition:transform .15s}
+.schedule-collapse[open] .schedule-chevron{transform:rotate(180deg)}
+.schedule-collapse .schedule-list{margin-top:8px}
+.break-action-row{justify-content:center;text-align:center}
+.break-action-row button{flex:0 1 auto}
+</style><style>
+body{padding-bottom:env(safe-area-inset-bottom);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding-top:max(14px,env(safe-area-inset-top))}button{touch-action:manipulation}button:focus-visible,summary:focus-visible{outline:2px solid #73d9c0;outline-offset:3px}
+#scanPanel,#settingsPanel{position:fixed;inset:0;z-index:90;background:#0c111b;overflow:auto;padding:calc(16px + env(safe-area-inset-top)) 16px calc(30px + env(safe-area-inset-bottom));display:none}
+#scanPanel.active,#settingsPanel.active{display:block} .mobile-inner{max-width:520px;margin:auto}.mobile-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.mobile-top h2{margin:0;font-size:20px}.mobile-top button{width:auto;margin:0}
+#scanVideo{display:block;width:100%;max-height:50vh;aspect-ratio:1;object-fit:cover;border:1px solid #315e65;border-radius:15px;background:#090e17}
+.mobile-hint{color:#9aacc3;font-size:12px;line-height:1.6}.mobile-field{display:block;width:100%;background:#0c1421;color:#e8eef8;border:1px solid #34445a;border-radius:9px;padding:11px;margin:7px 0 12px;font:inherit}
+.mobile-panel{background:#131c2a;border:1px solid #263449;border-radius:13px;padding:14px;margin:12px 0}.mobile-panel h3{margin:0 0 12px;font-size:14px}.mobile-panel label{display:block;margin:10px 0;color:#dce5f2}.mobile-panel input[type=checkbox]{accent-color:#49d7a1}.mobile-panel input[type=range]{width:100%;accent-color:#49d7a1}.mobile-panel select{width:100%;padding:10px;background:#0c1421;color:white;border:1px solid #34445a;border-radius:8px}
+#qrStatus{color:#9de7c9;min-height:20px;font-size:12px;line-height:1.5}#alertBox{display:block}#alertBox[hidden]{display:none!important}
+@media(max-width:760px){header{padding-left:16px;padding-right:16px}.hero{border-radius:14px}.layout{gap:0}.panel{border-radius:13px}.countdown{font-size:40px}}
+</style></head><body><header><div class="brand-icon"><img src="data:image/png;base64,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" class="brand-logo" alt=""></div><div class="brand"><h1>Schedule Helper</h1><p>Genesys activity alerts</p></div><button type="button" class="header-settings" id="openNativeSettings" aria-label="Open settings" title="Settings">&#9881;</button></header><main><div class="layout"><div class="left">
+<section class="hero" id="hero"><div class="eyebrow">CURRENT ACTIVITY</div><div class="next-title" id="currentName">No schedule loaded</div><div class="small" id="currentTime">Scan your schedule QR code to begin</div><div class="progress"><div id="progressFill"></div></div><div class="eyebrow" style="margin-top:13px;color:#8bcaff">UP NEXT</div><div class="next-title" id="nextName">—</div><div class="countdown" id="countdown">--:--</div><div class="small" id="nextMeta">Waiting for schedule</div><div class="tracking" id="breakTracking" hidden></div></section>
+<div class="alertbox" id="alertBox" hidden><strong id="alertTitle">Schedule alert</strong><div id="alertMessage" style="margin-top:5px"></div><button class="secondary" id="dismissBtn">Dismiss alert</button></div>
+<section class="panel"><div class="section-title">Break controls</div><button class="call" id="callBtn" hidden></button><div id="callNote" hidden></div><div class="row break-action-row" style="margin-top:11px"><button class="muted-button" id="breakBtn">▶ Start delayed break</button><button class="muted-button" id="endBreakBtn" disabled>■ End break</button></div><div class="compact-note" id="breakNote">Starts the latest scheduled break or meal using its planned duration.</div><div class="tracking" id="breakDetails"></div></section>
+<section class="panel" id="delayedBreakPanel" hidden><div class="section-title">⏳ Delayed break / meal</div><div class="compact-note" id="delayedBreakText"></div><div class="button-row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:9px"><button class="primary" id="startDelayedBtn">▶ Start delayed break / meal</button><button class="secondary" id="dismissDelayedBtn">Dismiss</button></div></section>
+<details class="panel schedule-collapse" id="scheduleDetails"><summary class="schedule-heading"><span class="section-title">Today's Schedule</span><span class="status-pill" id="eventCount">0 activities</span><span class="schedule-chevron" aria-hidden="true">⌄</span></summary><div class="compact-note" id="scheduleFreshness"></div><div class="schedule-list" id="scheduleList"><div class="empty">No schedule imported.</div></div></details>
+
+</div><div class="right">
+<section class="panel"><div class="section-title">Import via QR Bridge</div><button class="primary" onclick="window.GSHMobile.scanQR()">▦ Scan Genesys QR code</button><div class="compact-note">Scan with the same QR Bridge. Your schedule stays on this device. Alerts work while this page is active; background alarms are not guaranteed.</div><button class="secondary" id="resetSchedule">Clear imported schedule</button></section>
+<section class="panel" id="timingPanel" style="display:none"><div class="section-title">Alert timing</div><label class="check"><input class="timing" type="checkbox" value="60" checked> <span>1 minute before</span></label><label class="check"><input class="timing" type="checkbox" value="30"> <span>30 seconds before</span></label><label class="check"><input class="timing" type="checkbox" value="0"> <span>When it starts</span></label><div class="compact-note">Activity reminders use your imported QR schedule, not live Genesys status.</div></section>
+
+<section class="panel" id="importDetails" hidden><textarea id="scheduleInput"></textarea><button id="importBtn">Load schedule</button><button id="clearBtn">Clear</button><div id="validation"></div><div id="importMessage"></div></section>
+
+</div></div></main>
+<script>window.Android={manualBreak(){},endManualBreak(){},syncSchedule(){},clearManualBreak(){},openSettings(){window.GSHMobile.openSettings()},scanQR(){window.GSHMobile.scanQR()}};</script><script>(()=>{'use strict';
+const $=id=>document.getElementById(id);
+function normalizePaste(input){
+  // Genesys rich-text clipboard can contain HTML character references and Markdown-like emphasis.
+  const decoded=String(input||'').replace(/&#(?:x([0-9a-f]+)|([0-9]+));/gi,(_,hex,dec)=>{
+    const n=parseInt(hex||dec,hex?16:10);return n>0&&n<=0x10ffff?String.fromCodePoint(n):_;
+  }).replace(/&(?:amp|nbsp|quot|apos|lt|gt);/gi,x=>({'&amp;':'&','&nbsp;':' ','&quot;':'"','&apos;':"'",'&lt;':'<','&gt;':'>'})[x.toLowerCase()]||x);
+  return decoded.replace(/\*\s*(\([^)]*\))\s*\*/g,'$1').replace(/[\u200e\u200f\u202a-\u202e\u00a0\u202f]/g,' ');
+} const STORE='gsh_offline_v1';
+const defaults={timings:[60],sound:'alarm',volume:60,repeatUntilDismissed:true,raw:'',importDate:'',onCall:false};
+let settings={...defaults},events=[],fired=new Set(),pending=new Map(),activeAlert=null,alertQueue=[],manualBreak=null,delayedBreak=null,widget=null,audioCtx=null,lastDay='',lastRender='';
+try{settings={...defaults,...JSON.parse(localStorage.getItem(STORE)||'{}')};}catch{}
+settings.repeatUntilDismissed=true; // Always repeat until dismissed, including saved older preferences.
+// QR schedules expire at the next local calendar date; preferences are preserved.
+function clearPreviousDay(){
+ const today=localDay();
+ if(!settings.raw || settings.importDate===today)return false;
+ settings.raw='';settings.importDate='';save();
+ events=[];fired.clear();pending.clear();alertQueue=[];delayedBreak=null;lastRender='';
+ try{document.getElementById('scheduleInput').value='';}catch(e){}
+ try{document.getElementById('validation').textContent='';}catch(e){}
+ try{document.getElementById('importMessage').textContent='New day — scan today\'s Genesys QR code.';}catch(e){}
+ try{if(window.Android)Android.syncSchedule(JSON.stringify({raw:'',importDate:'',events:[],timings:settings.timings}));}catch(e){}
+ return true;
+}
+
+// Deliberately no fetch, XMLHttpRequest, WebSocket, imports, remote assets, or Genesys access.
+function localDay(){const d=new Date();return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(settings));}catch{}}
+function pad(n){return String(n).padStart(2,'0')}
+function fmt(t){return new Date(t).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'})}
+function countdown(ms){let s=Math.max(0,Math.ceil(ms/1000));const h=Math.floor(s/3600),m=Math.floor(s%3600/60);return h?`${h}:${pad(m)}:${pad(s%60)}`:`${pad(m)}:${pad(s%60)}`}
+function minutesFrom(s){const x=String(s||'').toLowerCase();const h=x.match(/(\d+)\s*(?:h|hr|hrs|hours?)\b/),m=x.match(/(\d+)\s*(?:m|min|mins|minutes?)\b/);return (h?+h[1]*60:0)+(m?+m[1]:0)}
+function parseClock(h,m,ap){h=+h;m=+m;if(m>59||h>23)return null;if(ap){if(h<1||h>12)return null;h=h%12+(ap.toUpperCase()==='PM'?12:0)}const d=new Date();d.setHours(h,m,0,0);return d.getTime()}
+function classify(name){const n=name.toLowerCase();if(/shift\s*end|end\s*of\s*shift|log\s*out|logout/.test(n))return 'shift-end';if(/break|rest\s*period/.test(n))return 'break';if(/meal|lunch|dinner/.test(n))return 'meal';if(/off\s*queue|wfm|training|meeting|coaching|adherence|exception|callback|call back|project|email|offline/.test(n))return 'off';return 'queue'}
+function parseSchedule(raw){
+  const clean=normalizePaste(raw).replace(/\t/g,' ').replace(/\b([ap])\.\s*m\./gi,'$1M');
+  const lines=clean.split(/\r?\n/).map(x=>x.trim().replace(/\s+/g,' ')).filter(Boolean);
+  const results=[],seen=new Set();let carry=null;
+  const clock='(\\d{1,2}):(\\d{2})\\s*(AM|PM)?';
+  const trailing=new RegExp('^(.+?)\\s*'+clock+'$','i');
+  const leading=new RegExp('^'+clock+'\\s+(.+)$','i');
+  const onlyTime=new RegExp('^'+clock+'$','i');
+  const allowed=/^(?:on\s*queue|off\s*queue|break|meal|lunch|shift\s*end|end\s*of\s*shift|adherence(?:\s+exception)?|training|coaching|meeting|wfm(?:\s+approved)?|call\s*back|callback|email|chat|project|offline|exception|rest\s*period|log\s*out|logout)(?:\b|$)/i;
+  function unpack(value){
+    let name=value.trim(),duration='';
+    const d=name.match(/\(\s*((?:(?:\d+\s*(?:h|hr|hrs|hours?|m|min|mins|minutes?)\s*)+))\)/i);
+    if(d){duration=d[1].trim();name=name.replace(d[0],' ').trim()}
+    return {name:name.replace(/\s+/g,' '),duration};
+  }
+  function add(name,h,m,ap,duration){
+    name=String(name||'').trim();
+    if(!allowed.test(name))return false;
+    const ts=parseClock(h,m,ap);if(ts===null)return false;
+    const key=ts+'|'+name.toLowerCase();if(seen.has(key))return true;
+    seen.add(key);results.push({name,ts,kind:classify(name),duration:duration||'',mins:minutesFrom(duration),key});return true;
+  }
+  for(const line of lines){
+    // Genesys sometimes includes an unrelated time range and a live countdown.
+    if(/^\d{1,2}:\d{2}\s*(?:AM|PM)?\s*[-–—]\s*\d{1,2}:\d{2}\s*(?:AM|PM)?$/i.test(line)||/^\d+:\d{2}\s+remaining$/i.test(line)){carry=null;continue}
+    let m;
+    if((m=line.match(trailing))){const item=unpack(m[1]);if(add(item.name,m[2],m[3],m[4],item.duration)){carry=null;continue}}
+    if((m=line.match(leading))){const item=unpack(m[4]);if(add(item.name,m[1],m[2],m[3],item.duration)){carry=null;continue}}
+    if(carry&&(m=line.match(onlyTime))){add(carry.name,m[1],m[2],m[3],carry.duration);carry=null;continue}
+    if(carry&&/^\([^)]+\)$/.test(line)){carry.duration=line.slice(1,-1);continue}
+    const item=unpack(line);carry=allowed.test(item.name)&&!(/\d{1,2}:\d{2}/.test(item.name))?item:null;
+  }
+  return results.sort((a,b)=>a.ts-b.ts);
+}
+
+window.gshParseSchedule=parseSchedule;
+function validationReport(raw,parsed){
+ const clean=normalizePaste(raw), lines=clean.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+ const relevant=lines.filter(x=>/^(?:on\s*queue|off\s*queue|break|meal|lunch|training|meeting|coaching|wfm|shift\s*end|end\s*of\s*shift|adherence|callback|call\s*back|email|chat|project|offline|exception|rest\s*period|log\s*out|logout)/i.test(x));
+ const warnings=[];
+ if(relevant.length>parsed.length)warnings.push(`${relevant.length-parsed.length} activity-like lines may not have imported (check multi-line entries).`);
+ const missing=parsed.filter(e=>(e.kind==='break'||e.kind==='meal')&&!e.mins);if(missing.length)warnings.push(`${missing.length} break/meal activities have no recognized duration (10 minutes used if manually started).`);
+ const same=parsed.filter((e,i)=>i&&e.ts===parsed[i-1].ts);if(same.length)warnings.push(`${same.length} activities share a start time.`);
+ const duplicate=parsed.filter((e,i)=>parsed.findIndex(x=>x.key===e.key)!==i);if(duplicate.length)warnings.push('Duplicate activities found.');
+ const long=parsed.filter((e,i)=>i&&e.ts-parsed[i-1].ts>4*3600000);if(long.length)warnings.push('Large gaps between activities detected.');
+ return warnings;
+}
+function updateFreshness(){const stale=!!settings.raw&&settings.importDate!==localDay();$('scheduleFreshness').textContent=!settings.raw?'':stale?'⚠ Saved schedule is not confirmed for today. Import today’s schedule before relying on alerts.':'✓ Schedule imported today';$('scheduleFreshness').classList.toggle('warning',stale)}
+function saveBreak(){try{if(manualBreak)localStorage.setItem(STORE+'_break',JSON.stringify(manualBreak));else localStorage.removeItem(STORE+'_break')}catch{}}
+function breakAlertKey(b,lead){return `manual-end|${b.start}|${lead}`}
+function checkBreakEnd(now){
+ if(!manualBreak)return;
+ const b=manualBreak,end=b.start+b.mins*60000;
+ // Early warnings follow the user's selected timings; the actual ending alarm is mandatory.
+ for(const lead of settings.timings.filter(x=>x>0)){
+  const key=breakAlertKey(b,lead),when=end-lead*1000;
+  if(now<when||now>=end||fired.has(key))continue;
+  fired.add(key);
+  if(now-when<=12000){const a={key,name:'Break ending soon · '+b.name,lead,ts:end,breakEnd:true};if(settings.onCall)pending.set(key,a);else showAlert(a)}
+ }
+ const key=breakAlertKey(b,0);
+ // Do not discard an overdue end alarm because the browser slept or the page was refreshed.
+ if(now>=end&&!b.endAlertDismissed&&!fired.has(key)){
+  fired.add(key);
+  const a={key,name:'Break ended · '+b.name,lead:0,ts:end,breakEnd:true,mandatoryEnd:true};
+  if(settings.onCall)pending.set(key,a);else showAlert(a);
+ }
+ if(now>=end)$('breakDetails').textContent='⚠ Scheduled break duration has ended. End the break manually when you actually return.';
+}
+function latestBreak(now=Date.now()){
+ const candidates=events.filter(e=>(e.kind==='break'||e.kind==='meal')&&e.ts<=now);
+ return candidates.length?candidates[candidates.length-1]:null;
+}
+function currentDisplay(now){
+ if(manualBreak){const end=manualBreak.start+manualBreak.mins*60000;return {name:manualBreak.name,ts:manualBreak.start,kind:manualBreak.kind||'break',mins:manualBreak.mins,manual:true,remaining:end-now,deadline:end};}
+ return getCurrent(now);
+}
+function nextDisplay(now){
+ if(manualBreak){return {name:'Return to queue',ts:manualBreak.start+manualBreak.mins*60000,duration:'',kind:'queue',manual:true};}
+ return getNext(now);
+}
+function getCurrent(now){if(manualBreak)return {name:manualBreak.name,ts:manualBreak.start,kind:'break',mins:manualBreak.mins,manual:true};let cur=null;for(const e of events){if(e.ts<=now)cur=e;else break}return cur}
+function getNext(now){return events.find(e=>e.ts>now)||null}
+function renderSchedule(now){const key=events.map(e=>e.key).join('~')+'|'+events.findIndex((e,i)=>e.ts<=now&&(!events[i+1]||events[i+1].ts>now));if(key===lastRender)return;lastRender=key;const list=$('scheduleList');list.replaceChildren();$('eventCount').textContent=`${events.length} activities`;if(!events.length){const d=document.createElement('div');d.className='empty';d.textContent='No schedule imported.';list.append(d);return}for(let i=0;i<events.length;i++){const e=events[i],next=events[i+1],current=e.ts<=now&&(!next||next.ts>now);const row=document.createElement('div');row.className='schedule-item'+(current?' current-row':e.ts<now?' past':'');const dot=document.createElement('span');dot.className='dot '+e.kind;const info=document.createElement('div');info.className='activity-info';const title=document.createElement('div');title.className='activity-name';title.textContent=e.name;info.append(title);if(e.duration){const sub=document.createElement('div');sub.className='duration';sub.textContent=e.duration;info.append(sub)}const t=document.createElement('span');t.className='time';t.textContent=fmt(e.ts);row.append(dot,info,t);list.append(row)}}
+function tick(){
+ const now=Date.now(),day=new Date().toDateString();
+ if(clearPreviousDay())lastRender='';
+ updateFreshness();
+ if(day!==lastDay){lastDay=day;fired.clear();pending.clear();if(settings.raw){events=parseSchedule(settings.raw);lastRender=''}}
+ checkBreakEnd(now);const cur=currentDisplay(now),next=nextDisplay(now);
+ $('currentName').textContent=cur?cur.name:events.length?'Before shift':'No schedule loaded';
+ $('currentTime').textContent=cur?`${cur.manual?'Started manually · ':''}Started ${fmt(cur.ts)}`:events.length?'Waiting for first activity':'Scan your schedule QR code to begin';
+ $('nextName').textContent=next?next.name:'No upcoming activity';
+ $('countdown').textContent=next?countdown(next.ts-now):'--:--';$('countdown').classList.toggle('urgent',!!next&&next.ts<=now);$('countdown').classList.toggle('soon',!!next&&next.ts>now&&next.ts-now<=60000);
+ $('nextMeta').textContent=next?(next.manual?'Break ends at '+fmt(next.ts):`Scheduled ${fmt(next.ts)} · ${next.duration||'duration unspecified'}`):'No more scheduled activities';
+ let end=cur?cur.ts+(cur.mins||0)*60000:0;
+ if(cur&&!cur.manual){const index=events.indexOf(cur);if(index>=0&&events[index+1])end=events[index+1].ts}
+ const pct=cur&&end>cur.ts?Math.max(0,Math.min(100,(now-cur.ts)/(end-cur.ts)*100)):0;
+ $('progressFill').style.width=pct+'%';renderSchedule(now);updateTracking(now);
+ for(const e of events){if(settings.importDate!==localDay()||e.kind==='shift-end')continue;for(const lead of settings.timings){
+  const key=e.key+'|'+lead,when=e.ts-lead*1000;
+  if(fired.has(key)||now<when)continue;fired.add(key);
+  if(now-when>12000)continue;
+  const a={key,name:e.name,lead,ts:e.ts};if(settings.onCall)pending.set(key,a);else showAlert(a);
+ }}
+ updateManual();updateWidget();
+}
+let repeatAlarmTimer=null;let soundingContexts=new Set();
+function stopAlarm(){if(repeatAlarmTimer!==null){clearInterval(repeatAlarmTimer);repeatAlarmTimer=null}for(const ctx of soundingContexts){try{ctx.close().catch(()=>{})}catch{}}soundingContexts.clear()}
+function dismiss(){if(activeAlert?.mandatoryEnd&&manualBreak&&activeAlert.key===breakAlertKey(manualBreak,0)){manualBreak.endAlertDismissed=true;saveBreak()}stopAlarm();activeAlert=null;$('alertBox').hidden=true;if(alertQueue.length){const next=alertQueue.shift();showAlert(next);return}updateWidget()}
+function showAlert(a){if(activeAlert){if(activeAlert.key===a.key||alertQueue.some(x=>x.key===a.key))return;if(a.mandatoryEnd)alertQueue.unshift(a);else alertQueue.push(a);return}stopAlarm();activeAlert=a;$('alertTitle').textContent=a.name;$('alertMessage').textContent=a.test?'Test alarm':a.breakEnd?`${a.mandatoryEnd?'Your break has ended':`Your break ends in ${a.lead} seconds`} · ${fmt(a.ts)}`:a.delayed?`Reminder delayed during your call · ${a.name} scheduled ${fmt(a.ts)}`:a.lead?`${a.name} starts in ${a.lead} seconds · ${fmt(a.ts)}`:`${a.name} starts now · ${fmt(a.ts)}`;$('alertBox').hidden=false;if(a.breakEnd){try{Android.manualAlarm(a.name)}catch(e){}}updateWidget()}
+function renderDelayedBreak(){
+ const visible=!!delayedBreak;
+ $('delayedBreakPanel').hidden=!visible;
+ if(visible)$('delayedBreakText').textContent=`${delayedBreak.name} was scheduled for ${fmt(delayedBreak.ts)}. When you actually begin your break or meal in Genesys, click Start delayed break / meal to start the local timer.`;
+ updateWidget();
+}
+function setDelayedBreak(a){if(a&&/break|meal|lunch/i.test(a.name)){delayedBreak={name:a.name,ts:a.ts,mins:events.find(e=>e.ts===a.ts)?.mins||10};renderDelayedBreak()}}
+function startDelayedBreak(){if(!delayedBreak)return;manualBreak={name:delayedBreak.name,start:Date.now(),mins:delayedBreak.mins,kind:classify(delayedBreak.name),sourceTs:delayedBreak.ts};saveBreak();try{Android.manualBreak(manualBreak.name,String(Math.round(manualBreak.start+manualBreak.mins*60000)))}catch(e){}delayedBreak=null;renderDelayedBreak();updateManual();tick()}
+function dismissDelayedBreak(){delayedBreak=null;renderDelayedBreak()}
+function setCall(on){settings.onCall=!!on;save();$('callBtn').classList.toggle('active',settings.onCall);$('callBtn').setAttribute('aria-pressed',String(settings.onCall));$('callBtn').textContent=settings.onCall?'☎ I’m on a call · ON':'☎ I’m on a call · OFF';$('callNote').textContent=settings.onCall?'Scheduled alerts are held until you finish the call.':'Turn this on during calls. Alerts will wait until you turn it off.';if(settings.onCall){if(activeAlert){pending.set(activeAlert.key,activeAlert);stopAlarm();activeAlert=null;$('alertBox').hidden=true}for(const a of alertQueue)pending.set(a.key,a);alertQueue=[]}else if(pending.size){const held=[...pending.values()].sort((a,b)=>a.ts-b.ts);pending.clear();const latest=held.filter(a=>!a.breakEnd&&/break|meal|lunch/i.test(a.name)).at(-1);if(latest)setDelayedBreak(latest);for(const a of held)showAlert({...a,delayed:true});}updateWidget()}
+function updateTracking(now=Date.now()){
+ const el=$('breakTracking'),detail=$('breakDetails');if(!manualBreak){el.hidden=true;detail.textContent='';return}
+ const b=manualBreak,end=b.start+b.mins*60000,delay=b.sourceTs?Math.max(0,Math.round((b.start-b.sourceTs)/60000)):null;
+ const info=`${b.name} · Scheduled ${b.sourceTs?fmt(b.sourceTs):'unknown'} · Actual ${fmt(b.start)} · ${delay===null?'Delay unknown':delay+' min late'} · Ends ${fmt(end)} · ${now>=end?'Overdue '+countdown(now-end):countdown(end-now)+' remaining'}`;
+ el.hidden=false;el.textContent=info;detail.textContent=info;
+}
+function updateManual(){
+ const active=!!manualBreak;
+ const chosen=latestBreak();
+ $('breakBtn').disabled=active||!chosen;
+ $('breakBtn').textContent=chosen?`▶ Start delayed break (${chosen.duration||chosen.mins+'m'})`:'▶ Start delayed break';
+ $('endBreakBtn').disabled=!active;
+ $('breakNote').textContent=active?`${manualBreak.name} · ${countdown(manualBreak.start+manualBreak.mins*60000-Date.now())} remaining`:
+  chosen?`Latest scheduled: ${chosen.name} at ${fmt(chosen.ts)} · ${chosen.duration||chosen.mins+'m'}. Timer starts when you click.`:'No break or meal has been scheduled yet today.';
+}
+const PATTERNS={chime:[[784,0,.16],[1046,.18,.22]],double:[[660,0,.12],[660,.2,.12]],pulse:[[520,0,.28]],bell:[[880,0,.12],[1174,.14,.16],[1480,.32,.24]],urgent:[[880,0,.18],[880,.24,.18],[1100,.48,.35]],siren:[[520,0,.18],[660,.2,.18],[820,.4,.18],[1050,.6,.36]],alarm:[[940,0,.16],[700,.2,.16],[940,.4,.16],[700,.6,.3]],ring:[[900,0,.14],[1100,.16,.14],[900,.4,.14],[1100,.56,.22]],radar:[[620,0,.1],[800,.15,.12],[1050,.33,.38]],longbell:[[659,0,.45],[784,.52,.45],[988,1.04,.55],[784,1.66,.45],[1046,2.18,.65]],warble:[[540,0,.35],[760,.4,.35],[540,.8,.35],[760,1.2,.35],[540,1.6,.35],[760,2,.5]],longring:[[900,0,.22],[1100,.25,.22],[900,.6,.22],[1100,.85,.22],[900,1.4,.22],[1100,1.65,.22],[900,2,.22],[1100,2.25,.3]]};
+async function playSound(){if(settings.sound==='off'||settings.volume===0)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const ctx=new C();soundingContexts.add(ctx);const gain=ctx.createGain();gain.gain.value=settings.volume/100*.22;gain.connect(ctx.destination);await ctx.resume();for(const [f,t,d] of PATTERNS[settings.sound]||PATTERNS.chime){const o=ctx.createOscillator(),g=ctx.createGain(),start=ctx.currentTime+.03+t;o.type=settings.sound==='pulse'?'sine':'triangle';o.frequency.value=f;g.gain.setValueAtTime(.0001,start);g.gain.exponentialRampToValueAtTime(.7,start+.018);g.gain.exponentialRampToValueAtTime(.0001,start+d);o.connect(g);g.connect(gain);o.start(start);o.stop(start+d+.02)}setTimeout(()=>{soundingContexts.delete(ctx);ctx.close().catch(()=>{})},3800)}catch(err){console.warn('Alert audio failed:',err)}}
+function widgetMarkup(){return `<style>
+:root{color-scheme:dark;--bg:#0c111b;--panel:#131c2a;--line:#263449;--text:#e8eef8;--muted:#9aaac0;--mint:#73d9c0;--amber:#ffd38a}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:13px/1.45 Segoe UI,Arial,sans-serif}.wrap{padding:13px;display:grid;gap:10px}
+.hero{background:linear-gradient(120deg,#102b2c,#10202b);border:1px solid #245b57;border-radius:12px;padding:14px}
+.eyebrow{font-size:10px;font-weight:800;letter-spacing:.11em;color:var(--mint)}.name{font-size:20px;font-weight:750;margin:4px 0;line-height:1.2}
+.timer{font-size:32px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:.02em}.sub{color:var(--muted);font-size:11px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px}.section-title{font-size:11px;font-weight:750;color:#b9d6ee;margin-bottom:9px}
+button{border:1px solid #34445a;border-radius:9px;background:#172438;color:#c6e5ff;padding:10px 12px;font-weight:700;cursor:pointer;font:inherit}
+button.primary{background:#186e59;border-color:#2b9679;color:#e3fff2}button.secondary{background:#283548;color:#e0e9f6}button.call.on{background:#352719;border-color:#a77b3b;color:var(--amber)}
+button:disabled{opacity:.45;cursor:default}.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px}.controls button{min-width:0}.controls .call{grid-column:1/-1}
+.alert{background:#302719;border:1px solid #a77b3b;border-radius:11px;padding:12px}.alert[hidden]{display:none!important}.alert b{color:var(--amber)}.alert .actions{display:flex;gap:7px;margin-top:9px}.alert button{flex:1}
+.schedule{max-height:220px;overflow:auto;font-size:11px;margin-top:8px}.item{padding:7px 2px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:8px}.item span{color:var(--muted);white-space:nowrap}summary{cursor:pointer;font-weight:750;color:#b9d6ee}
+/* Compact mode deliberately changes layout, not merely a checkbox. */
+bodybodybodybodybodybodybodybodybodybodybodybodybody</style><div class="wrap"><div class="hero"><div class="eyebrow">CURRENT ACTIVITY</div><div class="name" id="wc">—</div><div class="sub" id="wtime"></div><div class="eyebrow" style="margin-top:13px;color:#8bcaff">UP NEXT</div><div class="name" id="wn">—</div><div class="timer" id="wt">--:--</div><div class="sub" id="wm"></div><div class="sub" id="wtrack"></div></div>
+<div class="alert" id="wa" hidden><b id="wat"></b><div id="wam" class="sub"></div><div class="actions"><button class="secondary" id="wdismiss">Dismiss alert</button></div></div>
+<div class="alert" id="wdelay" hidden><b>⏳ Delayed break / meal</b><div class="sub" id="wdelaytext"></div><div class="actions"><button class="primary" id="wstartdelay">▶ Start delayed break</button><button class="secondary" id="wdismissdelay">Dismiss</button></div></div>
+<div class="panel"><div class="section-title">CALL &amp; BREAK CONTROLS</div><div class="controls"><button class="call" id="wcall">☎ On Call OFF</button><button class="primary" id="wbreak">▶ Start delayed break</button><button class="secondary" id="wendbreak">■ End break</button></div><div class="sub" id="wbreaknote" style="margin-top:8px"></div></div>
+<details class="panel" id="wd"><summary>Today's Schedule</summary><div class="schedule" id="wlist"></div></details></div>`}
+function updateWidget(){if(!widget||widget.closed){widget=null;return}try{
+ const d=widget.document,now=Date.now(),cur=currentDisplay(now),next=nextDisplay(now);
+ const set=(id,v)=>{const el=d.getElementById(id);if(el)el.textContent=v};
+ set('wc',cur?.name||'Before shift');set('wtime',cur?`Started ${fmt(cur.ts)}`:'No current activity');
+ set('wn',next?.name||'No upcoming activity');set('wt',next?countdown(next.ts-now):'--:--');
+ set('wm',next?(next.manual?'Break ends '+fmt(next.ts):'Scheduled '+fmt(next.ts)):'');set('wtrack',manualBreak?`Actual start ${fmt(manualBreak.start)} · ${manualBreak.sourceTs?Math.max(0,Math.round((manualBreak.start-manualBreak.sourceTs)/60000))+'m late · ':''}${manualBreak.mins}m duration`:'');
+ const call=d.getElementById('wcall');if(call){call.textContent=settings.onCall?'☎ On Call ON':'☎ On Call OFF';call.classList.toggle('on',settings.onCall)}
+ const chosen=latestBreak(now),breakBtn=d.getElementById('wbreak'),endBtn=d.getElementById('wendbreak');
+ if(breakBtn){breakBtn.textContent=chosen?`▶ Start delayed break`:'▶ Start delayed break';breakBtn.disabled=!!manualBreak||!chosen}
+ if(endBtn)endBtn.disabled=!manualBreak;
+ set('wbreaknote',manualBreak?`${manualBreak.name} · ${countdown(manualBreak.start+manualBreak.mins*60000-now)} remaining`:chosen?`Latest: ${chosen.name} · ${chosen.duration||chosen.mins+'m'} at ${fmt(chosen.ts)}`:'No earlier break today');
+ const a=d.getElementById('wa');if(a){a.hidden=!activeAlert;set('wat',activeAlert?.name||'');set('wam',$('alertMessage').textContent)}
+ const delayed=d.getElementById('wdelay');if(delayed){delayed.hidden=!delayedBreak;set('wdelaytext',delayedBreak?`${delayedBreak.name} scheduled ${fmt(delayedBreak.ts)}. Start when you actually begin.`:'')}
+ const list=d.getElementById('wlist');if(list){const key=events.map(e=>e.key).join('|');if(list.dataset.key!==key){list.dataset.key=key;list.replaceChildren();for(const e of events){const row=d.createElement('div'),name=d.createElement('div'),t=d.createElement('span');row.className='item';name.textContent=e.name;t.textContent=fmt(e.ts);row.append(name,t);list.append(row)}}}
+ }catch{}}
+async function openWidget(){if(widget&&!widget.closed){widget.focus();return}try{if('documentPictureInPicture' in window){widget=await documentPictureInPicture.requestWindow({width:365,height:485})}else{widget=window.open('','gshOfflineWidget',`popup=yes,width=${365},height=${500}`);$('widgetHelp').textContent='Browser fallback opened a window. Always-on-top is not guaranteed.'}if(!widget)throw Error('Popup blocked');widget.document.title='Live Schedule Widget';widget.document.body.innerHTML=widgetMarkup();widget.document.getElementById('wdismiss').onclick=dismiss;widget.document.getElementById('wcall').onclick=()=>setCall(!settings.onCall);widget.document.getElementById('wbreak').onclick=startBreak;widget.document.getElementById('wendbreak').onclick=endBreak;widget.document.getElementById('wstartdelay').onclick=startDelayedBreak;widget.document.getElementById('wdismissdelay').onclick=dismissDelayedBreak;widget.addEventListener('pagehide',()=>widget=null);updateWidget()}catch(err){$('widgetHelp').textContent='Could not open floating widget: '+err.message}}
+function startBreak(){
+ if(manualBreak)return;
+ const chosen=latestBreak();if(!chosen)return;
+ manualBreak={name:chosen.name,start:Date.now(),mins:chosen.mins||10,kind:chosen.kind,sourceTs:chosen.ts};saveBreak();try{Android.manualBreak(manualBreak.name,String(Math.round(manualBreak.start+manualBreak.mins*60000)))}catch(e){}
+ if(delayedBreak){delayedBreak=null;renderDelayedBreak()}
+ updateManual();tick();
+}
+function endBreak(){if(manualBreak){const prefix='manual-end|'+manualBreak.start+'|';for(const key of [...pending.keys()])if(key.startsWith(prefix))pending.delete(key);alertQueue=alertQueue.filter(a=>!a.key?.startsWith(prefix));if(activeAlert?.key?.startsWith(prefix)){stopAlarm();activeAlert=null;$('alertBox').hidden=true}}manualBreak=null;try{Android.cancelManualBreak()}catch(e){}saveBreak();updateManual();tick()}
+function load(){const raw=$('scheduleInput').value;const parsed=parseSchedule(raw);if(!parsed.length){$('importMessage').textContent='No activities recognized. Use lines such as Break (10m) 9:45 AM, or copy activity rows from Genesys.';return}settings.raw=raw;settings.importDate=localDay();save();events=parsed;fired.clear();pending.clear();alertQueue=[];delayedBreak=null;renderDelayedBreak();dismiss();lastRender='';const warnings=validationReport(raw,parsed);$('validation').className='validation '+(warnings.length?'warn':'ok');$('validation').textContent=warnings.length?'⚠ Import checks:\n'+warnings.join('\n'):'✓ Import validation passed.';$('importMessage').textContent=`Loaded ${events.length} activities. Check the schedule list and keep this page open.`;tick()}
+$('startDelayedBtn').onclick=startDelayedBreak;$('dismissDelayedBtn').onclick=dismissDelayedBreak;$('importBtn').onclick=load;$('clearBtn').onclick=()=>{settings.raw='';settings.importDate='';save();events=[];alertQueue=[];$('validation').textContent='';$('scheduleInput').value='';fired.clear();pending.clear();delayedBreak=null;renderDelayedBreak();dismiss();lastRender='';$('importMessage').textContent='Schedule cleared.';tick()};$('callBtn').onclick=()=>setCall(!settings.onCall);$('breakBtn').onclick=startBreak;$('endBreakBtn').onclick=endBreak;$('dismissBtn').onclick=dismiss;
+for(const el of document.querySelectorAll('.timing')){el.checked=settings.timings.includes(+el.value);el.onchange=()=>{settings.timings=[...document.querySelectorAll('.timing:checked')].map(x=>+x.value);save();fired.clear();for(const e of events)for(const lead of settings.timings)if(Date.now()>e.ts-lead*1000)fired.add(e.key+'|'+lead)}}
+$('openNativeSettings').onclick=()=>window.GSHMobile.openSettings();window.gshTestAlarm=()=>showAlert({name:'Test schedule alert',test:true,key:'test-'+Date.now()});window.addEventListener('gsh-settings-changed',()=>{try{const x=JSON.parse(localStorage.getItem(STORE)||'{}');settings.sound=x.sound||'alarm';settings.volume=x.volume??60;settings.timings=x.timings||[60]}catch{}});if($('copyDiagnostics')) $('copyDiagnostics').onclick=()=>{const s=`Genesys Schedule Helper \nLocal only; no Genesys access or network requests\nActivities: ${events.length}\nOn call: ${settings.onCall}\nAudio: ${settings.sound}, system default\nBrowser: ${navigator.userAgent}`;if(navigator.clipboard?.writeText)navigator.clipboard.writeText(s).then(()=>{($('diagnostics')||$('importMessage')).textContent='Diagnostics copied.'}).catch(()=>{($('diagnostics')||$('importMessage')).textContent=s});else ($('diagnostics')||$('importMessage')).textContent=s};
+clearPreviousDay();$('scheduleInput').value=settings.raw;events=parseSchedule(settings.raw);try{const restored=JSON.parse(localStorage.getItem(STORE+'_break')||'null');if(restored&&Number.isFinite(restored.start)&&restored.mins>0&&restored.start<=Date.now()&&Date.now()-restored.start<24*3600000)manualBreak=restored;else localStorage.removeItem(STORE+'_break')}catch{}updateFreshness();for(const e of events)for(const lead of settings.timings)if(Date.now()>=e.ts-lead*1000)fired.add(e.key+'|'+lead);settings.onCall=false; // Android does not use On Call mode.
+if(manualBreak){try{Android.manualBreak(manualBreak.name,String(Math.round(manualBreak.start+manualBreak.mins*60000)))}catch(e){}}updateManual();tick();// Recompute visible timers from absolute timestamps, never by subtracting an interval.
+function paintClocks(){
+ const now=Date.now(), next=nextDisplay(now);
+ $('countdown').textContent=next?countdown(next.ts-now):'--:--';
+ if(widget&&!widget.closed){try{
+   const d=widget.document, wnext=nextDisplay(now), clock=d.getElementById('wt');
+   if(clock){clock.textContent=wnext?countdown(wnext.ts-now):'--:--';clock.classList.toggle('urgent',!!wnext&&wnext.ts<=now);clock.classList.toggle('soon',!!wnext&&wnext.ts>now&&wnext.ts-now<=60000)}
+   const note=d.getElementById('wbreaknote');
+   if(note&&manualBreak)note.textContent=`${manualBreak.name} · ${countdown(manualBreak.start+manualBreak.mins*60000-now)} remaining`;
+ }catch{}}
+ if(manualBreak){$('breakNote').textContent=`${manualBreak.name} · ${countdown(manualBreak.start+manualBreak.mins*60000-now)} remaining`;}
+}
+// Animation frames make the seconds visibly tick in the foreground; interval
+// fallback keeps both views current when Chrome throttles background rendering.
+let lastClockFrame=0;
+function clockFrame(t){if(t-lastClockFrame>=80){lastClockFrame=t;paintClocks()}requestAnimationFrame(clockFrame)}
+requestAnimationFrame(clockFrame);
+setInterval(()=>{tick();paintClocks()},250);
+document.addEventListener('visibilitychange',()=>{tick();paintClocks()});
+window.addEventListener('focus',()=>{tick();paintClocks()});
+
+})();</script><script>
+window.gshReceiveQR=function(raw){const field=document.getElementById('scheduleInput');field.value=raw;document.getElementById('importBtn').click();};
+document.getElementById('resetSchedule').addEventListener('click',()=>document.getElementById('clearBtn').click());
+</script><section id="scanPanel" aria-label="Scan schedule QR" role="dialog" aria-modal="true"><div class="mobile-inner"><div class="mobile-top"><h2>▦ Scan schedule QR</h2><button class="muted-button" id="closeScan">✕ Close</button></div><video id="scanVideo" autoplay muted playsinline></video><p id="qrStatus" role="status">Camera not started.</p><p class="mobile-hint">Use the unchanged QR Bridge v0.2.1. The scanner processes the code on your phone; no schedule is uploaded.</p><button class="primary" id="startCamera">Start camera</button><div class="mobile-panel"><h3>Scan a saved QR image</h3><input class="mobile-field" id="qrImage" type="file" accept="image/*"><p class="mobile-hint">Requires browser QR decoding support. You can also paste a decoded GSH1 code below.</p><textarea id="qrText" class="mobile-field" rows="3" placeholder="GSH1|... QR text"></textarea><button class="secondary" id="importQRText">Import QR text</button></div></div></section>
+<section id="settingsPanel" aria-label="Settings" role="dialog" aria-modal="true"><div class="mobile-inner"><div class="mobile-top"><h2>⚙ Settings</h2><button class="muted-button" id="closeSettings">✕ Done</button></div><div class="mobile-panel"><h3>Alert timing</h3><label><input class="setting-timing" type="checkbox" value="60"> 1 minute before</label><label><input class="setting-timing" type="checkbox" value="30"> 30 seconds before</label><label><input class="setting-timing" type="checkbox" value="0"> When it starts</label></div><div class="mobile-panel"><h3>Sound</h3><label for="mobileSound">Alert tone</label><select id="mobileSound"><option value="alarm">Digital alarm</option><option value="chime">Gentle chime</option><option value="double">Double beep</option><option value="pulse">Soft pulse</option><option value="bell">Bright bell</option><option value="urgent">Urgent triple alert</option><option value="siren">Rising siren</option><option value="ring">Telephone ring</option><option value="radar">Attention signal</option><option value="longbell">Long bell melody</option><option value="warble">Repeating warble</option><option value="longring">Extended telephone ring</option><option value="off">No sound</option></select><label for="mobileVolume">Volume <span id="volumeLabel">60%</span></label><input type="range" id="mobileVolume" min="0" max="100" value="60"><button class="secondary" id="testMobileAlarm">Test full alarm</button></div><div class="mobile-panel"><h3>Local data &amp; limitations</h3><p class="mobile-hint">Schedule data is stored only in this browser on this device. It is cleared at the next local calendar day, as in Android. Camera requires HTTPS or localhost. Audio alarms require an active page and an initial user interaction. iOS and Android may suspend timers when the app is backgrounded or locked.</p><button class="secondary" id="settingsClear">Clear today's schedule</button></div><div class="mobile-hint">Genesys Schedule Helper · Mobile Web v0.1.0 TEST</div></div></section><script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);let stream=null,loopId=null,detector=null,busy=false,scanId='',parts=new Map(),total=0;
+function state(){try{return JSON.parse(localStorage.getItem('gsh_offline_v1')||'{}')}catch{return {}}}
+function updateSettings(){const s=state();document.querySelectorAll('.setting-timing').forEach(c=>c.checked=(s.timings||[60]).includes(Number(c.value)));$('mobileSound').value=s.sound||'alarm';$('mobileVolume').value=s.volume??60;$('volumeLabel').textContent=(s.volume??60)+'%'}
+function changeSetting(k,v){const s=state();s[k]=v;localStorage.setItem('gsh_offline_v1',JSON.stringify(s));if(k==='timings'){document.querySelectorAll('.timing').forEach(c=>{c.checked=v.includes(+c.value)})}window.dispatchEvent(new Event('gsh-settings-changed'));}
+function openSettings(){updateSettings();$('settingsPanel').classList.add('active');document.body.style.overflow='hidden'}
+function closeSettings(){$('settingsPanel').classList.remove('active');document.body.style.overflow=''}
+function status(s){$('qrStatus').textContent=s}
+function stopCamera(){if(loopId){cancelAnimationFrame(loopId);loopId=null}if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}$('scanVideo').srcObject=null}
+function closeScan(){stopCamera();$('scanPanel').classList.remove('active');document.body.style.overflow=''}
+function openScan(){if(!('BarcodeDetector' in window)){status('This browser does not provide built-in QR decoding. You can still paste decoded GSH1 text, or use a compatible browser.')}else status('Tap Start camera and point at the QR Bridge code.');$('scanPanel').classList.add('active');document.body.style.overflow='hidden'}
+async function getDetector(){if(!('BarcodeDetector' in window))throw Error('QR decoding is not supported in this browser.');if(!detector){if(BarcodeDetector.getSupportedFormats){const formats=await BarcodeDetector.getSupportedFormats();if(!formats.includes('qr_code'))throw Error('QR decoding is unavailable on this device.')}detector=new BarcodeDetector({formats:['qr_code']})}return detector}
+function decode64(text){const t=text.replace(/-/g,'+').replace(/_/g,'/');const bin=atob(t+'='.repeat((4-t.length%4)%4));return Uint8Array.from(bin,c=>c.charCodeAt(0))}
+function importPayload(raw){const f=raw.trim().split('|');if(f.length!==5||f[0]!=='GSH1')throw Error('Not a Genesys QR Bridge code.');const id=f[1],index=Number(f[2]),count=Number(f[3]);if(!/^[a-f0-9]{12}$/i.test(id)||!Number.isInteger(index)||!Number.isInteger(count)||count<1||count>40||index<1||index>count)throw Error('Invalid QR part header.');const bytes=decode64(f[4]);if(bytes.length>1200)throw Error('QR part is too large.');if(scanId!==id){scanId=id;parts=new Map();total=count}if(count!==total)throw Error('QR part count changed.');parts.set(index,bytes);if(parts.size!==total){status(`Scanned ${parts.size} of ${total}. Scan the next QR part.`);return}const size=[...parts.values()].reduce((n,a)=>n+a.length,0);if(size>40000)throw Error('Schedule exceeds import limit.');const all=new Uint8Array(size);let p=0;for(let i=1;i<=total;i++){const chunk=parts.get(i);if(!chunk)throw Error('Missing QR part.');all.set(chunk,p);p+=chunk.length}const schedule=new TextDecoder('utf-8',{fatal:true}).decode(all);if(!schedule.trim())throw Error('QR code contains an empty schedule.');window.gshReceiveQR(schedule);const loaded=state();if(loaded.raw!==schedule)throw Error('Schedule could not be parsed. Check the QR Bridge input.');status('✓ Schedule imported successfully.');scanId='';parts.clear();setTimeout(closeScan,550)}
+async function scanFrame(){if(!stream)return;if(!busy&&$('scanVideo').readyState>=2){busy=true;try{const d=await getDetector();const codes=await d.detect($('scanVideo'));if(codes.length){importPayload(codes[0].rawValue);await new Promise(r=>setTimeout(r,900))}}catch(e){status(e.message)}finally{busy=false}}if(stream)loopId=requestAnimationFrame(scanFrame)}
+async function startCamera(){stopCamera();try{await getDetector();if(!navigator.mediaDevices?.getUserMedia)throw Error('Camera requires HTTPS or localhost and browser camera permission.');stream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:{ideal:'environment'}}});$('scanVideo').srcObject=stream;await $('scanVideo').play();status('Camera active — align the QR code in view.');loopId=requestAnimationFrame(scanFrame)}catch(e){status('Camera unavailable: '+e.message);stopCamera()}}
+$('startCamera').onclick=startCamera;$('closeScan').onclick=closeScan;$('closeSettings').onclick=closeSettings;$('qrImage').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{const d=await getDetector();const bitmap=await createImageBitmap(file);try{const codes=await d.detect(bitmap);if(!codes.length)throw Error('No QR code found in this image.');importPayload(codes[0].rawValue)}finally{bitmap.close()}}catch(err){status(err.message)}e.target.value=''};
+$('importQRText').onclick=()=>{try{importPayload($('qrText').value)}catch(e){status(e.message)}};
+$('mobileSound').onchange=e=>changeSetting('sound',e.target.value);$('mobileVolume').oninput=e=>{$('volumeLabel').textContent=e.target.value+'%';changeSetting('volume',+e.target.value)};
+document.querySelectorAll('.setting-timing').forEach(c=>c.onchange=()=>changeSetting('timings',[...document.querySelectorAll('.setting-timing:checked')].map(x=>+x.value)));
+$('testMobileAlarm').onclick=()=>{closeSettings();setTimeout(()=>document.getElementById('dismissBtn')?.focus(),100)};
+$('settingsClear').onclick=()=>{document.getElementById('clearBtn').click();closeSettings()};
+window.GSHMobile={openSettings,scanQR:openScan,testTone(){const a=document.querySelector('#mobileSound');/* Audio test uses local Web Audio; no network. */const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const ctx=new C();ctx.resume().then(()=>{for(const [f,t] of [[940,0],[700,.22],[940,.44]]){const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=f;o.type='triangle';g.gain.setValueAtTime(.001,ctx.currentTime+t);g.gain.exponentialRampToValueAtTime(.1,ctx.currentTime+t+.02);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+t+.18);o.connect(g);g.connect(ctx.destination);o.start(ctx.currentTime+t);o.stop(ctx.currentTime+t+.2)}setTimeout(()=>ctx.close(),1300)})}};
+if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
+})();
+</script></body></html>

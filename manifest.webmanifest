@@ -1,0 +1,21 @@
+{
+  "name": "Genesys Schedule Helper",
+  "short_name": "Schedule Helper",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0c111b",
+  "theme_color": "#0c111b",
+  "description": "Local-only schedule companion; no backend or Genesys connection",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
