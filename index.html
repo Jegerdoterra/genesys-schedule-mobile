@@ -543,14 +543,50 @@ window.addEventListener('focus',()=>{tick();paintClocks()});
 window.gshReceiveQR=function(raw){const field=document.getElementById('scheduleInput');field.value=raw;document.getElementById('importBtn').click();};
 document.getElementById('resetSchedule').addEventListener('click',()=>document.getElementById('clearBtn').click());
 </script><div class="app-footer" id="authorCredit">Created by Jonathan Eger · Hebrew Team</div><section id="scanPanel" aria-label="Scan schedule QR" role="dialog" aria-modal="true"><div class="mobile-inner"><div class="mobile-top"><h2>▦ Scan schedule QR</h2><button class="muted-button" id="closeScan">✕ Close</button></div><video id="scanVideo" autoplay muted playsinline></video><p id="qrStatus" role="status">Camera not started.</p><p class="mobile-hint">Use the unchanged QR Bridge v0.2.1. The scanner processes the code on your phone; no schedule is uploaded.</p><button class="primary" id="startCamera">Start camera</button><div class="mobile-panel"><h3>Scan a saved QR image</h3><input class="mobile-field" id="qrImage" type="file" accept="image/*"><p class="mobile-hint">Requires browser QR decoding support. You can also paste a decoded GSH1 code below.</p><textarea id="qrText" class="mobile-field" rows="3" placeholder="GSH1|... QR text"></textarea><button class="secondary" id="importQRText">Import QR text</button></div></div></section>
-<section id="settingsPanel" aria-label="Settings" role="dialog" aria-modal="true"><div class="mobile-inner"><div class="mobile-top"><h2>⚙ Settings</h2><button class="muted-button" id="closeSettings">✕ Done</button></div><div class="mobile-panel"><h3>Alert timing</h3><label><input class="setting-timing" type="checkbox" value="60"> 1 minute before</label><label><input class="setting-timing" type="checkbox" value="30"> 30 seconds before</label><label><input class="setting-timing" type="checkbox" value="0"> When it starts</label></div><div class="mobile-panel"><h3>Sound</h3><label for="mobileSound">Alert tone</label><select id="mobileSound"><option value="alarm">Digital alarm</option><option value="chime">Gentle chime</option><option value="double">Double beep</option><option value="pulse">Soft pulse</option><option value="bell">Bright bell</option><option value="urgent">Urgent triple alert</option><option value="siren">Rising siren</option><option value="ring">Telephone ring</option><option value="radar">Attention signal</option><option value="longbell">Long bell melody</option><option value="warble">Repeating warble</option><option value="longring">Extended telephone ring</option><option value="off">No sound</option></select><label for="mobileVolume">Volume <span id="volumeLabel">60%</span></label><input type="range" id="mobileVolume" min="0" max="100" value="60"><button class="secondary" id="testMobileAlarm">Test full alarm</button></div><div class="mobile-panel"><h3>Local data &amp; limitations</h3><p class="mobile-hint">Schedule data is stored only in this browser on this device. It is cleared at the next local calendar day, as in Android. Camera requires HTTPS or localhost. Audio alarms require an active page and an initial user interaction. iOS and Android may suspend timers when the app is backgrounded or locked.</p><button class="secondary" id="settingsClear">Clear today's schedule</button></div></div></section><script>
+<section id="settingsPanel" aria-label="Settings" role="dialog" aria-modal="true"><div class="mobile-inner"><div class="mobile-top"><h2>⚙ Settings</h2><button class="muted-button" id="closeSettings">✕ Done</button></div><div class="mobile-panel"><h3>Alert timing</h3><label><input class="setting-timing" type="checkbox" value="60"> 1 minute before</label><label><input class="setting-timing" type="checkbox" value="30"> 30 seconds before</label><label><input class="setting-timing" type="checkbox" value="0"> When it starts</label></div><div class="mobile-panel"><h3>Sound</h3><label for="mobileSound">Alert tone</label><select id="mobileSound"><option value="alarm">Digital alarm</option><option value="chime">Gentle chime</option><option value="double">Double beep</option><option value="pulse">Soft pulse</option><option value="bell">Bright bell</option><option value="urgent">Urgent triple alert</option><option value="siren">Rising siren</option><option value="ring">Telephone ring</option><option value="radar">Attention signal</option><option value="longbell">Long bell melody</option><option value="warble">Repeating warble</option><option value="longring">Extended telephone ring</option><option value="off">No sound</option></select><label for="mobileVolume">Volume <span id="volumeLabel">60%</span></label><input type="range" id="mobileVolume" min="0" max="100" value="60"><button class="secondary" id="testMobileAlarm">Test full alarm</button></div><div class="mobile-panel"><h3>Local data &amp; limitations</h3><p class="mobile-hint">Schedule data is stored only in this browser on this device. It is cleared at the next local calendar day, as in Android. Camera requires HTTPS or localhost. Audio alarms require an active page and an initial user interaction. iOS and Android may suspend timers when the app is backgrounded or locked.</p><button class="secondary" id="settingsClear">Clear today's schedule</button></div><div class="mobile-panel" id="installSection"><h3>Install app</h3><button class="primary" id="installMobileApp" type="button">Install app</button><p class="mobile-hint" id="installHelp" role="status" aria-live="polite">Add Genesys Schedule Helper to your home screen.</p></div></div></section><script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id);let stream=null,loopId=null,detector=null,busy=false,scanId='',parts=new Map(),total=0;
 function state(){try{return JSON.parse(localStorage.getItem('gsh_offline_v1')||'{}')}catch{return {}}}
 function updateSettings(){const s=state();document.querySelectorAll('.setting-timing').forEach(c=>c.checked=(s.timings||[60]).includes(Number(c.value)));$('mobileSound').value=s.sound||'alarm';$('mobileVolume').value=s.volume??60;$('volumeLabel').textContent=(s.volume??60)+'%'}
 function changeSetting(k,v){const s=state();s[k]=v;localStorage.setItem('gsh_offline_v1',JSON.stringify(s));if(k==='timings'){document.querySelectorAll('.timing').forEach(c=>{c.checked=v.includes(+c.value)})}window.dispatchEvent(new Event('gsh-settings-changed'));}
-function openSettings(){updateSettings();$('settingsPanel').classList.add('active');document.body.style.overflow='hidden'}
+function openSettings(){updateSettings();refreshInstallUI();$('settingsPanel').classList.add('active');document.body.style.overflow='hidden'}
 function closeSettings(){$('settingsPanel').classList.remove('active');document.body.style.overflow=''}
+// The Android Chromium install event is only available when the browser offers it.
+// iOS Safari has no programmatic install prompt: show the manual Home Screen path.
+let deferredInstallPrompt=null;
+const installBtn=$('installMobileApp'),installHelp=$('installHelp');
+const isStandalone=()=>window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+const isIOS=()=>/iPad|iPhone|iPod/.test(navigator.userAgent)||(/Macintosh/.test(navigator.userAgent)&&navigator.maxTouchPoints>1);
+function refreshInstallUI(){
+ if(isStandalone()){
+  installBtn.textContent='App already installed';installBtn.disabled=true;
+  installHelp.textContent='You are using the installed app.';
+ }else if(isIOS()){
+  installBtn.textContent='How to install on iPhone';installBtn.disabled=false;
+  installHelp.textContent='Safari: Share → Add to Home Screen → Add. Choose Open as Web App if shown.';
+ }else if(deferredInstallPrompt){
+  installBtn.textContent='Install app';installBtn.disabled=false;
+  installHelp.textContent='Tap Install app to open Chrome’s installation prompt.';
+ }else{
+  installBtn.textContent='Add to Home screen';installBtn.disabled=false;
+  installHelp.textContent='Chrome: ⋮ menu → Add to Home screen or Install app. The browser may not offer an automatic prompt.';
+ }
+}
+window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredInstallPrompt=event;refreshInstallUI()});
+window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;refreshInstallUI()});
+installBtn.onclick=async()=>{
+ if(isStandalone())return;
+ if(deferredInstallPrompt){
+  const event=deferredInstallPrompt;deferredInstallPrompt=null;
+  try{await event.prompt();const choice=await event.userChoice;
+   installHelp.textContent=choice?.outcome==='accepted'?'Installation accepted. Look for the app on your home screen.':'Installation dismissed. You can use Chrome’s menu to install later.';
+  }catch(e){installHelp.textContent='Chrome could not open the prompt. Use ⋮ → Add to Home screen or Install app.'}
+  refreshInstallUI();return;
+ }
+ if(isIOS())installHelp.textContent='Open this page in Safari, tap Share (square with up arrow) → Add to Home Screen → Add. Enable Open as Web App if offered.';
+ else installHelp.textContent='Open Chrome’s ⋮ menu → Add to Home screen or Install app. If this option is missing, use the site in Chrome and try again.';
+};
+refreshInstallUI();
 function status(s){$('qrStatus').textContent=s}
 function stopCamera(){if(loopId){cancelAnimationFrame(loopId);loopId=null}if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}$('scanVideo').srcObject=null}
 function closeScan(){stopCamera();$('scanPanel').classList.remove('active');document.body.style.overflow=''}
