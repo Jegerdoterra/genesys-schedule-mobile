@@ -1,9 +1,9 @@
-Genesys Schedule Helper — Mobile Web v0.1.0 TEST
+Genesys Schedule Helper Mobile Web v0.1.1 TEST
 
-Upload all files together to any static HTTPS host (e.g. GitHub Pages). Open index.html in Safari on iPhone or Chrome on Android. Use Add to Home Screen / Install app. First load online; subsequent cached loads can work offline.
+FIXED: Test full alarm now triggers visible alarm and audible repeating sound until dismissed. Scheduled and manual break alerts use the same browser audio mechanism.
 
-QR Bridge: existing v0.2.1 unchanged. GSH1|id|part|total|base64url UTF-8 payload.
+Upload all files to the ROOT of your existing GitHub repository, replacing index.html and sw.js. On your phone, close and reopen the app; refresh the website if needed. Test while the app is open, phone media volume on, and silent mode off.
 
-Important: Browser camera scanning requires BarcodeDetector with QR support, which is not available in every Safari/Firefox version. Fallback: paste decoded GSH1 QR text. Browser audio and timers cannot reliably alert while locked/backgrounded. No server, Genesys access, cloud sync, or push notifications.
+LIMITATION: Web browsers cannot guarantee audio or notifications while phone is locked or app is backgrounded.
 
-This is a TEST release; verify QR import, audio, break timing, and schedule parsing on your devices before relying on reminders.
+No server-side schedule upload; imported schedules are stored locally.
